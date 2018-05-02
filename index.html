@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=1280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--  LOAD CSS -->
+    <link href="css/main.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/themes/0/teatro3_generic.min.css" rel="stylesheet" type="text/css" />
+    <link href="static/css/main.81d3c055.css" rel="stylesheet">
+    <!-- LOAD JS LIBRARIES -->
+    <script src="lib/promise.min.js" ></script>
+    <script src="lib/jquery.min.js" ></script>
+    <script src="lib/lodash.min.js" ></script>
+    <script src="lib/qrcode.min.js" ></script>
+    <title>UI application</title>
+    <style>
+    .preload-image:after {
+      content: url("./img/amco/Background_settings.jpg");
+      display: none;
+    }
+    </style>
+    <script type="text/javascript">
+        //var urlJs = "http://187.191.86.122/iwedia/main.8355ed18.js";
+        var urlJs = "https://aaf-stbiwedia.clarovideo.net/webapi-video/iwedia/main.js";
+        var originalLocation = location.href;
+        var _jsFileName='static/js/main.a8cdcdda.js';
+        var localJs = originalLocation.replace('index.html',_jsFileName);
+        localJs=localJs.replace('stbHTML_v3.html',_jsFileName);
+        window.commit = "a8cdcdda";
+    </script>
+</head>
+<body id="body">
+<object id="networkplugin" class="plugin hidden" type="application/networkplugin"></object>
+<object id="tvplugin" class="plugin hidden" type="application/tvplugin"></object>
+<object id="fslibplugin" class="plugin hidden" type="application/fslibplugin"></object>
+<object id="mplibplugin" class="plugin hidden" type="application/mplibplugin"></object>
+<object id="ttxt" type="application/ttxt" style="visibility:hidden; width:1280px; height:720px; position: absolute; left: 0px; top: 0px; z-index: -30;"></object>
+<object id="sub" type="application/sub" style="visibility:hidden; width:1280px; height:720px; position: absolute; left: 0px; top: 0px; z-index: -30;"></object>
+<div class="preload-image"></div>
+<div id="app"></div>
+
+<!--LOAD UI MINI FRAMEWORK-->
+<script src="../uiMiniFramework/namespaces/namespaces.js"></script>
+<script src="../uiMiniFramework/tools/tools.js"></script>
+<script src="../uiMiniFramework/config.js"></script>
+<script src="../uiMiniFramework/globals.js"></script>
+<script src="../uiMiniFramework/templates/templates.js"></script>
+<script src="../uiMiniFramework/keys/keys.js"></script>
+<script src="../uiMiniFramework/keys/sysKeys.js"></script>
+<script src="../uiMiniFramework/keys/frontPanelKeys.js"></script>
+<script src="../uiMiniFramework/serviceListCache/serviceListCache.js"></script>
+<script src="../uiMiniFramework/components/context.js"></script>
+<script src="../uiMiniFramework/components/component.js"></script>
+<script src="../uiMiniFramework/components/areaComponent.js"></script>
+<script src="../uiMiniFramework/components/buttonComponent.js"></script>
+<script src="../uiMiniFramework/components/passwordComponent.js"></script>
+<script src="../uiMiniFramework/components/spinnerComponent.js"></script>
+<script src="../uiMiniFramework/components/progressComponent.js"></script>
+<script src="../uiMiniFramework/components/timeComponent.js"></script>
+<script src="../uiMiniFramework/components/dateComponent.js"></script>
+<script src="../uiMiniFramework/components/durationComponent.js"></script>
+<script src="../uiMiniFramework/components/wrapperComponent.js"></script>
+<script src="../uiMiniFramework/components/labelComponent.js"></script>
+<script src="../uiMiniFramework/components/simpleLabelComponent.js"></script>
+<script src="../uiMiniFramework/components/textComponent.js"></script>
+<script src="../uiMiniFramework/components/multilineLabelComponent.js"></script>
+<script src="../uiMiniFramework/components/scrollableTextComponent.js"></script>
+<script src="../uiMiniFramework/components/numberComponent.js"></script>
+<script src="../uiMiniFramework/components/integerComponent.js"></script>
+<script src="../uiMiniFramework/components/listComponent.js"></script>
+<script src="../uiMiniFramework/components/simpleListComponent.js"></script>
+<script src="../uiMiniFramework/components/traversableListComponent.js"></script>
+<script src="../uiMiniFramework/components/ipAddressComponent.js"></script>
+<script src="../uiMiniFramework/components/notification.js"></script>
+<script src="../uiMiniFramework/components/confirmation.js"></script>
+<script src="../uiMiniFramework/components/permanentInformation.js"></script>
+<script src="../uiMiniFramework/components/playerComponent.js"></script>
+<script src="../uiMiniFramework/components/imagePlayerComponent.js"></script>
+<script src="../uiMiniFramework/components/radioButtonComponent.js"></script>
+<script src="../uiMiniFramework/modules/init/init.js"></script>
+<script src="../uiMiniFramework/modules/input/input.js"></script>
+<script src="../uiMiniFramework/modules/frontPanel/frontPanel.js"></script>
+<script src="../uiMiniFramework/modules/fingerPrint/fingerPrint.js"></script>
+<script src="../uiMiniFramework/modules/notifications/notifications.js"></script>
+<script src="../uiMiniFramework/modules/confirmations/confirmations.js"></script>
+<script src="../uiMiniFramework/modules/permanentInformations/permanentInformations.js"></script>
+<script src="../uiMiniFramework/modules/loader/loader.js"></script>
+<script src="../uiMiniFramework/modules/virtualKeyboard/virtualKeyboard.js"></script>
+<script src="../uiMiniFramework/modules/menu/menu.js"></script>
+<script src="../uiMiniFramework/modules/volumeBar/volumeBar.js"></script>
+<script src="../uiMiniFramework/modules/clock/clock.js"></script>
+<script src="../uiMiniFramework/modules/info/info.js"></script>
+<script src="../uiMiniFramework/modules/channelList/channelList.js"></script>
+<script src="../uiMiniFramework/modules/tvGuide/tvGuide.js"></script>
+<script src="../uiMiniFramework/modules/tvGuide/tvGuideFilters.js"></script>
+<script src="../uiMiniFramework/modules/infoBanner/infoBanner.js"></script>
+<script src="../uiMiniFramework/modules/zapperWrapper/zapperWrapper.js"></script>
+<script src="../uiMiniFramework/modules/usbDevices/usbDevices.js"></script>
+<script src="../uiMiniFramework/modules/settings/settings.js"></script>
+<script src="../uiMiniFramework/modules/settings/languageSettings.js"></script>
+<script src="../uiMiniFramework/modules/settings/videoSettings.js"></script>
+<script src="../uiMiniFramework/modules/settings/audioSettings.js"></script>
+<script src="../uiMiniFramework/modules/settings/parentalControl.js"></script>
+<script src="../uiMiniFramework/modules/settings/timezone.js"></script>
+<script src="../uiMiniFramework/modules/settings/enterPin.js"></script>
+<script src="../uiMiniFramework/modules/settings/updateChangeChannelList.js"></script>
+<script src="../uiMiniFramework/modules/settings/channelScan.js"></script>
+<script src="../uiMiniFramework/modules/settings/satelliteScan.js"></script>
+<script src="../uiMiniFramework/modules/settings/setupSatellite.js"></script>
+<script src="../uiMiniFramework/modules/settings/setupTransponder.js"></script>
+<script src="../uiMiniFramework/modules/settings/manualScan.js"></script>
+<script src="../uiMiniFramework/modules/settings/service.js"></script>
+<script src="../uiMiniFramework/modules/settings/qrcode.js"></script>
+<script src="../uiMiniFramework/modules/settings/backup.js"></script>
+<script src="../uiMiniFramework/modules/settings/restoreAll.js"></script>
+<script src="../uiMiniFramework/modules/settings/mediaInformation.js"></script>
+<script src="../uiMiniFramework/modules/settings/ethernetSettings.js"></script>
+<script src="../uiMiniFramework/modules/settings/wifiSettings.js"></script>
+<script src="../uiMiniFramework/modules/settings/playStreams.js"></script>
+<script src="../uiMiniFramework/modules/settings/caInformation.js"></script>
+<script src="../uiMiniFramework/modules/settings/maturityRating.js"></script>
+<script src="../uiMiniFramework/modules/settings/stbPinChange.js"></script>
+<script src="../uiMiniFramework/modules/settings/smartcardPinChange.js"></script>
+<script src="../uiMiniFramework/modules/settings/subscriptionStatus.js"></script>
+<script src="../uiMiniFramework/modules/settings/speedTest.js"></script>
+<script src="../uiMiniFramework/modules/settings/eventStatus.js"></script>
+<script src="../uiMiniFramework/modules/settings/tokensStatus.js"></script>
+<script src="../uiMiniFramework/modules/settings/debitStatus.js"></script>
+<script src="../uiMiniFramework/modules/settings/creditStatus.js"></script>
+<script src="../uiMiniFramework/modules/settings/mailbox.js"></script>
+<script src="../uiMiniFramework/modules/settings/version.js"></script>
+<script src="../uiMiniFramework/modules/settings/usbUpdate.js"></script>
+<script src="../uiMiniFramework/modules/settings/swUpgradeViaUsb.js"></script>
+<script src="../uiMiniFramework/modules/settings/swUpgradeViaSatellite.js"></script>
+<script src="../uiMiniFramework/modules/settings/factoryDefault.js"></script>
+<script src="../uiMiniFramework/modules/settings/ftiWelcome.js"></script>
+<script src="../uiMiniFramework/modules/settings/ftiChooseConfiguration.js"></script>
+<script src="../uiMiniFramework/modules/testSuite/testSuite.js"></script>
+<script src="../uiMiniFramework/modules/legend/legend.js"></script>
+<script src="../uiMiniFramework/translations/translationManager.js"></script>
+<script src="../uiMiniFramework/translations/languages.js"></script>
+<script>
+    //UIMiniFramework.Globals.isNetworkConnected = false;
+</script>
+<!-- LOAD APP JS FILES -->
+<script src="scripts/namespaces/namespaces.js"></script>
+<script src="scripts/translations/translations_Teatro3.js"></script>
+<script src="scripts/mappings/menu/menuItems.js"></script>
+<script src="scripts/mappings/info/messagesItems.js"></script>
+<script src="scripts/mappings/channelList/channelLists.js"></script>
+<script src="scripts/mappings/channelList/channelListItems.js"></script>
+<script src="scripts/mappings/settings/ftiWelcomeItems.js"></script>
+<script src="scripts/mappings/settings/ftiChooseConfigurationItems.js"></script>
+<script src="scripts/mappings/settings/languageSettingsItems.js"></script>
+<script src="scripts/mappings/settings/videoSettingsItems.js"></script>
+<script src="scripts/mappings/settings/audioSettingsItems.js"></script>
+<script src="scripts/mappings/settings/parentalControlItems.js"></script>
+<script src="scripts/mappings/settings/enterPinItems.js"></script>
+<script src="scripts/mappings/settings/timezoneItems.js"></script>
+<script src="scripts/mappings/settings/satelliteScanItems.js"></script>
+<script src="scripts/mappings/settings/satelliteSetupItems.js"></script>
+<script src="scripts/mappings/settings/transponderSetupItems.js"></script>
+<script src="scripts/mappings/settings/updateChangeListItems.js"></script>
+<script src="scripts/mappings/settings/channelScanItems.js"></script>
+<script src="scripts/mappings/settings/manualScanItems.js"></script>
+<script src="scripts/mappings/settings/serviceItems.js"></script>
+<script src="scripts/mappings/settings/qrcodeItems.js"></script>
+<script src="scripts/mappings/settings/caInformationItems.js"></script>
+<script src="scripts/mappings/settings/maturityRatingItems.js"></script>
+<script src="scripts/mappings/settings/versionItems.js"></script>
+<script src="scripts/mappings/settings/stbPinChangeItems.js"></script>
+<script src="scripts/mappings/settings/speedTestItems.js"></script>
+<script src="scripts/mappings/settings/smartcardPinChangeItems.js"></script>
+<script src="scripts/mappings/settings/subscriptionStatusItems.js"></script>
+<script src="scripts/mappings/settings/eventStatusItems.js"></script>
+<script src="scripts/mappings/settings/tokensStatusItems.js"></script>
+<script src="scripts/mappings/settings/debitStatusItems.js"></script>
+<script src="scripts/mappings/settings/creditStatusItems.js"></script>
+<script src="scripts/mappings/settings/mailboxItems.js"></script>
+<script src="scripts/mappings/settings/ethernetSettingsItems.js"></script>
+<script src="scripts/mappings/settings/wifiSettingsItems.js"></script>
+<script src="scripts/mappings/settings/playStreamsItems.js"></script>
+<script src="scripts/mappings/settings/mediaInformationItems.js"></script>
+<script src="scripts/mappings/settings/usbUpdateItems.js"></script>
+<script src="scripts/mappings/customPermanentInformations/ageLockItems.js"></script>
+<script src="scripts/mappings/customPermanentInformations/ageParentalLockItems.js"></script>
+<script src="scripts/mappings/customPermanentInformations/channelLockItems.js"></script>
+<script src="scripts/mappings/customPermanentInformations/orderInfoItems.js"></script>
+<script src="scripts/mappings/customPermanentInformations/ppvViewingDialogItemsItems.js"></script>
+<script src="scripts/mappings/customPermanentInformations/tokensAccessItems.js"></script>
+<script src="scripts/mappings/customConfirmations/customConfirmations.js"></script>
+<script src="scripts/mappings/customConfirmations/addHiddenNetworkItems.js"></script>
+<script src="scripts/mappings/customConfirmations/addWiFiPasswordItems.js"></script>
+<script src="scripts/mappings/customConfirmations/checkSCPinItems.js"></script>
+<script src="scripts/mappings/customPermanentInformations/customPermanentInformations.js"></script>
+<script src="scripts/mappings/legend/legendItems.js"></script>
+<!-- LOAD JS FILES - APP -->
+<script src="scripts/app/keyHandlers/keyHandlers.js"></script>
+<script src="scripts/app/callbacks/callbacks.js"></script>
+<!-- LOAD PLUGIN INTERFACE -->
+<script src="../pluginInterface/mappings/namespaces.js"></script>
+<script src="../pluginInterface/helpers/tools.js"></script>
+<script src="../pluginInterface/mappings/globals.js"></script>
+<script src="../pluginInterface/mappings/dummies.js"></script>
+<script src="../pluginInterface/setup.js"></script>
+<script src="../pluginInterface/network.js"></script>
+<script src="../pluginInterface/ttml.js"></script>
+<script src="../pluginInterface/avSettings.js"></script>
+<script src="../pluginInterface/cak.js"></script>
+<script src="../pluginInterface/channelInstallation.js"></script>
+<script src="../pluginInterface/epg.js"></script>
+<script src="../pluginInterface/frontPanel.js"></script>
+<script src="../pluginInterface/mediaBrowsing.js"></script>
+<script src="../pluginInterface/mediaPlayback.js"></script>
+<script src="../pluginInterface/parentalControl.js"></script>
+<script src="../pluginInterface/releaseNotes.js"></script>
+<script src="../pluginInterface/reminder.js"></script>
+<script src="../pluginInterface/serviceZapper.js"></script>
+<script src="../pluginInterface/signalStatus.js"></script>
+<script src="../pluginInterface/streamComponents.js"></script>
+<script src="../pluginInterface/vod.js"></script>
+<!-- LOAD MAIN JS FILE -->
+<script src="scripts/app/main.js"></script>
+ 
+  <div id="root" style="background-color:#000;background-repeat:no-repeat;background-size:100% 100%;background-position:center"></div>
+    <script>!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src="//www.google-analytics.com/analytics.js",s.parentNode.insertBefore(o,s)}(window,document,"script",0,"ga"),ga("create","UA-64680205-1","auto"),ga("send","pageview")</script>
+  <!-- <script type="text/javascript" src="http://aaf-stbnagra.clarovideo.net/static/js/main.507a9df.js"></script> -->
+
+  <div id="scripts"></div>
+   
+    <script>
+    window.getTimeStamp = function(){
+        var d = new Date();
+        var n = d.getMilliseconds();
+        var s = d.getSeconds();
+        var m = d.getMinutes();
+        var h = d.getHours();
+        var timestamp = "["+h+"h "+m+"m "+s+"s : "+n+"ms]";
+        return timestamp;
+    }
+
+    var script = null;
+    var kill;
+    var isNetwork = true;
+
+    function getOffline(){
+        console.log("NO hay RED");
+        UIMiniFramework.Globals.isNetworkConnected = false;
+        window.iWediaOffline = true;
+        script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = localJs;
+        document.getElementById('scripts').appendChild(script); 
+    }
+
+    function getOnline(){
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", urlJs, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+                    console.log("SI hay RED");
+                    var script = document.createElement("script");
+                    script.type = "text/javascript";
+                    script.text = xhr.responseText;
+                    document.getElementById('scripts').appendChild(script);
+                }else{
+                    isNetwork = false;
+                }
+            }else{
+                isNetwork = false;
+            }
+        };
+        xhr.send();
+    }
+    var http = new XMLHttpRequest();
+    http.open('HEAD', urlJs, true);
+    http.timeout = 1000;
+    http.onerror = function(){
+        isNetwork = false;
+    }
+    http.ontimeout = function(e){
+        isNetwork = false;
+    }
+    http.onreadystatechange = function () {
+        if ((http.status < 200 || http.status >= 300) && http.status != 304){
+            isNetwork = false;
+        }
+    }
+    http.send();
+
+    setTimeout (function(){
+        if(isNetwork)
+            getOnline();
+        else
+            getOffline();
+    }, 1001); 
+  
+    </script> 
+
+<!--
+<script>
+var xhr= new XMLHttpRequest();
+    xhr.open('GET', 'http://10.7.6.222:3000/', true);
+    xhr.onreadystatechange= function() {
+        if (this.readyState!==4) return;
+        if (this.status!==200) return;
+        var iframe = document.createElement('iframe');
+iframe.srcdoc = this.responseText;
+iframe.src = "data:text/html;charset=utf-8," + escape(this.responseText);
+document.body.appendChild(iframe);  
+};
+xhr.send();
+</script>
+-->
+
+</body>
+</html>
